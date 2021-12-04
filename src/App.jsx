@@ -1,26 +1,41 @@
 import './App.css'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Modal from 'react-modal';
+import { useState } from 'react';
 
-// react-tostify
-const CustomToast = ({ closeToast }) => {
-  return (
-    <div>
-      something went wrong !
-      <button onClick={closeToast}>close</button>
-    </div>
-  )
-}
+// react-modal
+Modal.setAppElement('#root');
+// custom styles
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    color: 'orange'
+  },
+  overlay: {
+    background: 'grey'
+  }
+};
+
 function App() {
+  const [modelIsOpen, setIsOpen] = useState(false)
 
-  // react-tostify
-  const notify = () => toast(<CustomToast />);
   return (
     <div className="App">
-      {/* react-tostify */}
-      <button onClick={notify}>Notify me</button>
-      <ToastContainer />
-      {/* react-modal */}
+      <button onClick={() => setIsOpen(true)}>open modal</button>
+      <Modal
+        isOpen={modelIsOpen}
+        onRequestClose={() => setIsOpen(false)}
+        shouldCloseOnOverlayClick={false}
+        style={customStyles}
+      >
+        <h2>Modal title</h2>
+        <p>modal body</p>
+        <button onClick={() => setIsOpen(false)}>close</button>
+      </Modal>
     </div>
   )
 }
