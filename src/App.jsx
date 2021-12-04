@@ -1,6 +1,8 @@
 import './App.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+// react-tostify
 const CustomToast = ({ closeToast }) => {
   return (
     <div>
@@ -10,9 +12,12 @@ const CustomToast = ({ closeToast }) => {
   )
 }
 function App() {
+
+  // react-tostify
   const notify = () => toast(<CustomToast />);
   return (
     <div className="App">
+      {/* react-tostify */}
       <button onClick={notify}>Notify me</button>
       <ToastContainer />
     </div>
