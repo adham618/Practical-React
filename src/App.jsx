@@ -20,7 +20,6 @@ function App() {
       {/* react-tostify */}
       <button onClick={notify}>Notify me</button>
       <ToastContainer />
-      {/* react-modal */}
     </div>
   )
 }
