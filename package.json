@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "react": "^17.0.0",
+    "react-credit-cards": "^0.8.3",
     "react-dom": "^17.0.0",
-    "react-icons": "^4.3.1",
     "react-modal": "^3.14.4",
     "react-toastify": "^8.1.0"
   },
